@@ -1,0 +1,34 @@
+# Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+# SPDX-License-Identifier: Apache-2.0
+
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: thenguyenyf
+      url-base: https://github.com/thanhthe23
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: main
+      import:
+        name-allowlist:
+          - cmsis_6
+          - cmsis-dsp
+          - cmsis-nn
+          - picolibc
+          - segger
+    - name: hal_fsp
+      remote: thenguyenyf
+      repo-path: z-fsp
+      revision: master
+      path: hal/hal_fsp
+<<<<<<< Updated upstream
+      submodules: true
+=======
+      submodule: yes
+>>>>>>> Stashed changes
+
+self:
+  path: fsp
