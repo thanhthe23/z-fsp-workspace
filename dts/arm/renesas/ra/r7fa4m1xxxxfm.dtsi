@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "r7fa4m1a.dtsi"
+
+/delete-node/ &ioport6;
+/delete-node/ &ioport7;
+/delete-node/ &ioport8;
+
+&ioport0 {
+	gpio-reserved-ranges = <5 5>;
+};
+
+&ioport1 {
+	gpio-reserved-ranges = <14 2>;
+};
+
+&ioport2 {
+	gpio-reserved-ranges = <2 2>, <7 5>;
+};
+
+&ioport3 {
+	gpio-reserved-ranges = <5 11>;
+};
+
+&ioport4 {
+	gpio-reserved-ranges = <3 4>, <12 4>;
+};
+
+&ioport5 {
+	gpio-reserved-ranges = <3 13>;
+};

@@ -14,21 +14,36 @@ manifest:
       revision: main
       import:
         name-allowlist:
-          - cmsis_6
+          - TraceRecorderSource
+          - canopennode
+          - chre
+          - cmsis
           - cmsis-dsp
           - cmsis-nn
+          - edtt
+          - fatfs
+          - liblc3
+          - libmetal
+          - littlefs
+          - loramac-node
+          - lvgl
+          - lz4
+          - mcuboot
+          - mipi-sys-t
+          - net-tools
+          - open-amp
           - picolibc
           - segger
+          - uoscore-uedhoc
+          - zcbor
+          - zscilib
+          - openthread
     - name: hal_fsp
       remote: thenguyenyf
       repo-path: z-fsp
       revision: master
-      path: hal/hal_fsp
-<<<<<<< Updated upstream
+      path: modules/hal/hal_fsp
       submodules: true
-=======
-      submodule: yes
->>>>>>> Stashed changes
 
 self:
   path: fsp

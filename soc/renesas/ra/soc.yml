@@ -1,0 +1,6 @@
+family:
+  - name: renesas_ra_custom
+    series:
+      - name: ra4m1_custom
+        socs:
+          - name: r7fa4m1ab3cfm_custom

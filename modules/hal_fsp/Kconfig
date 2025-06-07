@@ -1,0 +1,7 @@
+# Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config ZEPHYR_HAL_FSP_MODULE
+	bool
+
+rsource "ra/Kconfig.renesas_ra"

@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "r7fa4m1a.dtsi"
+
+/ {
+	soc {
+		flcn: flash-controller@407e0000 {
+			flash0: flash@0 {
+				compatible = "soc-nv-flash";
+				reg = <0x0 DT_SIZE_K(256)>;
+			};
+
+			flash1: flash@1 {
+				compatible = "soc-nv-flash";
+				reg = <0x40100000 DT_SIZE_K(8)>;
+			};
+		};
+	};
+};

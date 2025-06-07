@@ -1,0 +1,22 @@
+# Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config UART_RENESAS_RA_SCI
+	bool "Renesas RA SCI UART"
+	default y
+	depends on DT_HAS_ZEPHYR_RENESAS_RA_UART_SCI_ENABLED
+	select PINCTRL
+	help
+	  Enable support for Renesas RA SCI UART driver.
+
+if UART_RENESAS_RA_SCI
+
+config UART_RENESAS_RA_BAUDRATE_ERROR
+	int "Renesas RA SCI UART acceptable baudrate error"
+	default 15000
+	help
+	  Set the acceptable baudrate error for Renesas RA SCI UART.
+	  The value is in ppm (parts per million). The default value is 15000 ppm,
+	  which corresponds to a 1.5% error rate.
+
+endif

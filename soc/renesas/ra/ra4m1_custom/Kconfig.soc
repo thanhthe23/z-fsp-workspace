@@ -1,0 +1,20 @@
+# Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_RA4M1_CUSTOM
+	bool
+	select SOC_FAMILY_RENESAS_RA_CUSTOM
+	help
+	  Renesas RA4M1 series
+
+config SOC_R7FA4M1AB3CFM_CUSTOM
+	bool
+	select SOC_SERIES_RA4M1_CUSTOM
+	help
+	  R7FA4M1AB3CFM
+
+config SOC_SERIES
+	default "ra4m1_custom" if SOC_SERIES_RA4M1_CUSTOM
+
+config SOC
+	default "r7fa4m1ab3cfm_custom" if SOC_R7FA4M1AB3CFM_CUSTOM

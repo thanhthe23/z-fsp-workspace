@@ -1,0 +1,20 @@
+# Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config HAS_RENESAS_RA_FSP
+	bool
+	depends on SOC_FAMILY_RENESAS_RA
+
+if HAS_RENESAS_RA_FSP
+
+config RENESAS_RA_FSP_IOPORT
+	bool
+	help
+	  Include RA FSP IOPORT driver.
+
+config RENESAS_RA_FSP_SCI_UART
+	bool
+	help
+	  Include RA FSP SCI UART driver.
+
+endif # HAS_RENESAS_RA_FSP

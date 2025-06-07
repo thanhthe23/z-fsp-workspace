@@ -1,0 +1,15 @@
+# Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_SERIES_RA4M1_CUSTOM
+
+config NUM_IRQS
+	default 32
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 48000000
+
+config BUILD_OUTPUT_HEX
+	default y
+
+endif # SOC_SERIES_RA4M1_CUSTOM

@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) 2025 The.Thanh Nguyen <the.nguyen.yf@outlook.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <arm/renesas/ra/r7fa4m1ab3cfm.dtsi>
+#include "arduino_uno_r4_wifi_custom-pinctrl.dtsi"
+
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	model = "Arduino Uno R4 Wifi Board";
+	compatible = "renesas,ra4m1", "renesas,ra";
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &code_partition;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led: led {
+			gpios = <&ioport1 2 GPIO_ACTIVE_HIGH>;
+			label = "LED1";
+		};
+	};
+
+	aliases {
+		led0 = &led;
+	};
+};
+
+&flash0 {
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		boot_partition: partition@0 {
+			label = "bootloader";
+			reg = <0x00000000 0x4000>;
+			read-only;
+		};
+
+		code_partition: partition@4000 {
+			label = "code";
+			reg = <0x4000 0x3C000>;
+			read-only;
+		};
+	};
+};
+
+&ioport1 {
+	status = "okay";
+};
